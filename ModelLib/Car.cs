@@ -15,19 +15,14 @@ namespace ModelLib
         }
 
 
-        public static string Model { get; set; }
-        public static string Color { get; set; }
-        public static string RegistrationNumber { get; set; }
+        public string Model { get; set; }
+        public string Color { get; set; }
+        public string RegistrationNumber { get; set; }
 
-
-        //public override string ToString()
-        //{
-        //    return $"Your car is a {Color} {Model} with reg.nr {RegistrationNumber}";
-        //}
 
         public override string ToString()
         {
-            return $"{Model} {Color} {RegistrationNumber}";
+            return $"Your car is a {Color} {Model} with reg.nr {RegistrationNumber}";
         }
     }
 }

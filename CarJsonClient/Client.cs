@@ -4,6 +4,7 @@ using System.IO;
 using System.Net.Sockets;
 using System.Text;
 using ModelLib;
+using Newtonsoft.Json;
 
 namespace CarJsonClient
 {
@@ -20,24 +21,18 @@ namespace CarJsonClient
             StreamWriter writer = new StreamWriter(ns) { AutoFlush = true };
 
             Console.WriteLine(reader.ReadLine());
+            Car car = new Car("Tesla", "Green", "SK98129");
+
 
             while (true)
             {
-                Console.Write("Enter your car model 'ford': ");
-                var model = Console.ReadLine();
-                Console.WriteLine();
-                Console.Write("Enter your car color 'yellow': ");
-                var color = Console.ReadLine();
-                Console.WriteLine();
-                Console.Write("Enter your car regNr 'SK99821': ");
-                var regNr = Console.ReadLine();
-                Console.WriteLine();
+                Console.ReadLine();
+                var serializedLine = JsonConvert.SerializeObject(car);
+                writer.WriteLine(serializedLine);
+                Console.WriteLine($"Sending {serializedLine} to server");
 
-                Car line = new Car(model, color, regNr);
-                writer.WriteLine(line);
-                Console.WriteLine($"Sending {line} to server");
                 string lineReceived = reader.ReadLine();
-                Console.WriteLine($"Received {lineReceived} from server");
+                Console.WriteLine($"Received '{lineReceived}' from server");
                 Console.WriteLine();
             }
 

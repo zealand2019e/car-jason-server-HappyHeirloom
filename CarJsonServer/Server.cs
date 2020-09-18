@@ -4,17 +4,16 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using ModelLib;
+using Newtonsoft.Json;
 
 namespace CarJsonServer
 {
     public class Server
     {
         static int _clientNr = 0;
-        private static string _model;
-        private static string _color;
-        private static string _registrationNumber;
 
         public static void Start()
         {
@@ -48,35 +47,18 @@ namespace CarJsonServer
 
             writer.WriteLine("Server started...");
 
-            string[] wordsArray;
-            string inputLine = "";
             try
             {
-                inputLine = reader.ReadLine();
-                while (inputLine != null && inputLine != " ")
+                string clientLine = reader.ReadLine();
+
+                while (clientLine != null && clientLine != " ")
                 {
-                    writer.WriteLine($"string: {inputLine}");
-                    Console.WriteLine($"string: {inputLine}");
+                    Car deserializedCar = JsonConvert.DeserializeObject<Car>(clientLine);
 
+                    writer.WriteLine($"string: {deserializedCar}");
+                    Console.WriteLine($"string: {deserializedCar}");
 
-                    wordsArray = inputLine.Split(" ");
-
-                    if (wordsArray.Length == 3)
-                    {
-                        _model = wordsArray[0];
-                        _color = wordsArray[1];
-                        _registrationNumber = wordsArray[2];
-
-                        Car car = new Car(_model, _color, _registrationNumber);
-                        writer.WriteLine($"Your car is a {_color} {_model} with reg.nr {_registrationNumber}");
-
-                    }
-                    else
-                    {
-                        writer.WriteLine("Enter a valid car object. ('Model color regNr' Ford yellow SK18922 ) ");
-                    }
-
-                    inputLine = reader.ReadLine();
+                    clientLine = reader.ReadLine();
                 }
             }
             catch (Exception e)
