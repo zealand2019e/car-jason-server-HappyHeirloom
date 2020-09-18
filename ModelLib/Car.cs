@@ -7,11 +7,15 @@ namespace ModelLib
 {
     public class Car
     {
-        public Car(string model, string color, string registrationNumber)
+        //public Car(string model, string color, string registrationNumber)
+        //{
+        //    Model = model;
+        //    Color = color;
+        //    RegistrationNumber = registrationNumber;
+        //}
+
+        public Car()
         {
-            Model = model;
-            Color = color;
-            RegistrationNumber = registrationNumber;
         }
 
 
