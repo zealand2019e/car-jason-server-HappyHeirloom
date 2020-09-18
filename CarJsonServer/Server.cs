@@ -59,6 +59,14 @@ namespace CarJsonServer
                     Console.WriteLine($"string: {deserializedCar}");
 
                     clientLine = reader.ReadLine();
+
+                    AutoSale deserializedCarDealer = JsonConvert.DeserializeObject<AutoSale>(clientLine);
+
+                    writer.WriteLine($"string: {deserializedCarDealer}");
+                    Console.WriteLine($"string: {deserializedCarDealer}");
+
+                    clientLine = reader.ReadLine();
+
                 }
             }
             catch (Exception e)

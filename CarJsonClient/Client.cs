@@ -21,8 +21,16 @@ namespace CarJsonClient
             StreamWriter writer = new StreamWriter(ns) { AutoFlush = true };
 
             Console.WriteLine(reader.ReadLine());
+
             Car car = new Car("Tesla", "Green", "SK98129");
 
+            List<Car> carList = new List<Car>();
+            Car listCar1 = new Car("Ford", "Yellow", "FF42069");
+            Car listCar2 = new Car("Ferrari", "Red", "Mine");
+            carList.Add(listCar1);
+            carList.Add(listCar2);
+
+            AutoSale carDealer = new AutoSale("Bo", "Roskilde", carList);
 
             while (true)
             {
@@ -33,6 +41,14 @@ namespace CarJsonClient
 
                 string lineReceived = reader.ReadLine();
                 Console.WriteLine($"Received '{lineReceived}' from server");
+                Console.WriteLine();
+
+                var serializedCarDealer = JsonConvert.SerializeObject(carDealer);
+                writer.WriteLine(serializedCarDealer);
+                Console.WriteLine($"Sending {serializedCarDealer} to server");
+
+                string listReceived = reader.ReadLine();
+                Console.WriteLine($"Received '{listReceived}' from server");
                 Console.WriteLine();
             }
 

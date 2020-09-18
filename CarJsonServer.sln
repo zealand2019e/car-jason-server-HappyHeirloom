@@ -5,9 +5,13 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarJsonServer", "CarJsonServer\CarJsonServer.csproj", "{9BFD5209-DA30-468D-A3EF-BB8EF7E11826}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarJsonClient", "CarJsonClient\CarJsonClient.csproj", "{2B3646B5-7C1B-4085-8578-EBE08B6FF550}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarJsonClient", "CarJsonClient\CarJsonClient.csproj", "{2B3646B5-7C1B-4085-8578-EBE08B6FF550}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelLib", "ModelLib\ModelLib.csproj", "{B47F53B6-1550-4E1B-9F59-1B7902C47D0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelLib", "ModelLib\ModelLib.csproj", "{B47F53B6-1550-4E1B-9F59-1B7902C47D0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlServer", "XmlServer\XmlServer.csproj", "{4E0967FD-EE8A-444B-8C3E-82BE3DBD068D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlClient", "XmlClient\XmlClient.csproj", "{1B005C23-8AAC-4357-B77B-FA6FE89D59CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{B47F53B6-1550-4E1B-9F59-1B7902C47D0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B47F53B6-1550-4E1B-9F59-1B7902C47D0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B47F53B6-1550-4E1B-9F59-1B7902C47D0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E0967FD-EE8A-444B-8C3E-82BE3DBD068D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E0967FD-EE8A-444B-8C3E-82BE3DBD068D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E0967FD-EE8A-444B-8C3E-82BE3DBD068D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E0967FD-EE8A-444B-8C3E-82BE3DBD068D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B005C23-8AAC-4357-B77B-FA6FE89D59CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B005C23-8AAC-4357-B77B-FA6FE89D59CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B005C23-8AAC-4357-B77B-FA6FE89D59CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B005C23-8AAC-4357-B77B-FA6FE89D59CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
